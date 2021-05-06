@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* 初始化 */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: url("/assets/images/login_bg.jpg") no-repeat top center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+/* 顶部logo */
+.layui-main {
+    width: 1200px;
+    margin: 20px auto;
+}
+
+/* 注册登录区域 */
+.loginAndReBox {
+    width: 400px;
+    height: 310px;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* 注册标题 */
+.titleBox {
+    height: 60px;
+    background: url(/assets/images/login_title.png) no-repeat center center;
+}
+
+
+.layui-form {
+    padding: 0px 30px;
+}
+
+.links {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.layui-form-item {
+    position: relative;
+}
+.layui-icon {
+    position: absolute;
+    top: 50%;
+    left: 3%;
+    transform: translate(0, -50%);
+}
+.layui-input {
+    padding-left: 35px;
+}
