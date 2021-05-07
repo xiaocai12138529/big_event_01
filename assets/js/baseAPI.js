@@ -13,21 +13,22 @@ let baseURL = 'http://api-breakingnews-web.itheima.net'
 $.ajaxPrefilter(function (params) {
     // http://api-breakingnews-web.itheima.net
     // console.log(params.url);
-    params.url = baseURL +params.url
+    params.url = baseURL + params.url
 
     // 需求二 : 包含/没有的就拦截
-    if (params.url.indexOf('/my/') != -1){
+    if (params.url.indexOf('/my/') != -1) {
         params.headers = {
             Authorization: localStorage.getItem("token") || ""
         }
     }
-    
-    params.complete = function  (res) {
-        console.log(res);
+
+    params.complete = function (res) {
+        // console.log(res);
         let obj = res.responseJSON;
-        if (obj.status != 0 && obj.message != "获取用户基本信息成功!") {
-            localStorage.removeItem('token');
+        if (obj.status == 1 && obj.message == "身份认证失败！") {
+            console.log(123);
             location.href = '/login.html';
+            localStorage.removeItem('token');
         }
     }
 })
